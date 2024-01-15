@@ -13,6 +13,12 @@ export default function SemesterRow() {
         <GradeElement key={index} grade={grade} />
     ));
 
+    let sum = 0;
+    for (let i = 0; i < allGrades.length; i++) {
+        sum += allGrades[i];
+    }
+    sum = sum / allGrades.length
+
     return (
         <>
             <div className="px-4 py-6 sm:grid sm:grid-cols-5 sm:gap-4 sm:px-0">
@@ -21,7 +27,7 @@ export default function SemesterRow() {
                     <div className="flex flex-row flex-nowrap overflow-y-scroll gap-x-1.5">
                         {gradeWithColor}
                         <InputButton onNewGradeAdded={addGradeToSemester} />
-                        <SemesterAverage average={5} />
+                        <SemesterAverage average={sum} />
                     </div>
                 </dd>
             </div>
