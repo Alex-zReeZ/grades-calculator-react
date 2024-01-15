@@ -1,9 +1,26 @@
-export default function InputButton() {
+import React, {useState} from "react";
+
+
+
+export default function InputButton({ onNewGradeAdded }: { onNewGradeAdded: (g : number) => void }) {
+
+    const [grade, setGrades] = useState("")
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>{
+        setGrades(e.target.value)
+    }
+
+    const addGrade = () => {
+        const gradeToAdd = parseFloat(grade)
+        if (!isNaN(gradeToAdd) && gradeToAdd >= 1 && gradeToAdd <=6) {
+            onNewGradeAdded(gradeToAdd)
+
+        }
+    }
 
 
     return (
         <>
-
             <div className="flex">
                 <div>
                     <label htmlFor="sem1" className="sr-only"
@@ -16,6 +33,8 @@ export default function InputButton() {
                             <input
                                 type="number"
                                 name="number"
+                                value={grade}
+                                onChange={handleChange}
                                 id="sem1"
                                 className="block w-14 rounded-none rounded-l-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6"
                                 placeholder="4"
@@ -25,6 +44,7 @@ export default function InputButton() {
 
                         <button
                             type="button"
+                            onClick={addGrade}
                             className="relative -ml-px inline-flex items-center gap-x-1.5 rounded-r-md px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                         >
                             <svg

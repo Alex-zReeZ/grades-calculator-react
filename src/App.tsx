@@ -1,12 +1,9 @@
 import './App.css'
 import SemesterRow from "./Component/SemesterComponent/SemesterRow.tsx";
-import {useState} from "react";
-
 
 function App() {
 
-    const [allGrades, setAllGrades] = useState(0)
-    const [grades, setGrades] = useState(0)
+
 
     return (
         <>
@@ -139,7 +136,11 @@ function App() {
 
                                         <div className="mt-6 border-t border-gray-100">
                                             <dl className="divide-y divide-gray-100">
+
+
                                                 <SemesterRow />
+
+
                                                 <div className="px-4 py-6 sm:gap-4 sm:px-0">
                                                     <button
                                                         type="button"
