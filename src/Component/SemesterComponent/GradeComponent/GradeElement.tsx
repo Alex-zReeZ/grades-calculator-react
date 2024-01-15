@@ -1,6 +1,9 @@
-import SvgColor from '../SvgColor';
+import SvgColor from '../../SvgColor.tsx';
 
 export default function GradeElement({ grade }: { grade: number }) {
+
+
+
   return (
       <>
       <span

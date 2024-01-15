@@ -1,5 +1,6 @@
-import GradeElement from "../GradeComponent/GradeElement.tsx";
+import GradeElement from "./GradeComponent/GradeElement.tsx";
 import InputButton from "./InputButton.tsx";
+import SemesterAverage from "./SemesterAverage.tsx";
 
 export default function SemesterRow() {
     return (
@@ -16,11 +17,12 @@ export default function SemesterRow() {
                     <div
                         className="flex flex-row flex-nowrap overflow-y-scroll gap-x-1.5"
                     >
-                        <GradeElement grade={1}/>
+                        <GradeElement grade={6}/>
                         <GradeElement grade={5}/>
                         <GradeElement grade={4}/>
-                        <GradeElement grade={1}/>
+                        <GradeElement grade={4.5}/>
                         <InputButton/>
+                        <SemesterAverage average={6} />
                     </div>
                 </dd>
             </div>

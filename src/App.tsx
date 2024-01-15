@@ -1,9 +1,12 @@
 import './App.css'
-import GradeElement from "./Component/GradeComponent/GradeElement.tsx"
 import SemesterRow from "./Component/SemesterComponent/SemesterRow.tsx";
+import {useState} from "react";
 
 
 function App() {
+
+    const [allGrades, setAllGrades] = useState(0)
+    const [grades, setGrades] = useState(0)
 
     return (
         <>
@@ -49,9 +52,9 @@ function App() {
                                     className="w-6 h-6"
                                 >
                                     <path
-                                        fill-rule="evenodd"
+                                        fillRule="evenodd"
                                         d="M4.755 10.059a7.5 7.5 0 0112.548-3.364l1.903 1.903h-3.183a.75.75 0 100 1.5h4.992a.75.75 0 00.75-.75V4.356a.75.75 0 00-1.5 0v3.18l-1.9-1.9A9 9 0 003.306 9.67a.75.75 0 101.45.388zm15.408 3.352a.75.75 0 00-.919.53 7.5 7.5 0 01-12.548 3.364l-1.902-1.903h3.183a.75.75 0 000-1.5H2.984a.75.75 0 00-.75.75v4.992a.75.75 0 001.5 0v-3.18l1.9 1.9a9 9 0 0015.059-4.035.75.75 0 00-.53-.918z"
-                                        clip-rule="evenodd"
+                                        clipRule="evenodd"
                                     />
                                 </svg>
                             </button>
@@ -136,108 +139,7 @@ function App() {
 
                                         <div className="mt-6 border-t border-gray-100">
                                             <dl className="divide-y divide-gray-100">
-                                                <SemesterRow>
-
-                                                </SemesterRow>
-                                                <div
-                                                    className="px-4 py-6 sm:grid sm:grid-cols-5 sm:gap-4 sm:px-0"
-                                                >
-                                                    <dt className="text-sm font-medium text-gray-900 py-2">
-                                                        Semestre 2
-                                                    </dt>
-                                                    <dd
-                                                        className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-4 sm:mt-0 flex justify-between"
-                                                    >
-                                                        <div>
-                                <span
-                                    className="inline-flex items-center gap-x-1.5 rounded-md px-2 py-2 text-sm font-medium text-gray-900 ring-1 ring-inset ring-gray-200"
-                                >
-                                  <svg
-                                      className="h-1.5 w-1.5 fill-yellow-500"
-                                      viewBox="0 0 6 6"
-                                      aria-hidden="true"
-                                  >
-                                    <circle cx="3" cy="3" r="3"/>
-                                  </svg>
-                                  4
-                                </span>
-                                                            <span
-                                                                className="inline-flex items-center gap-x-1.5 rounded-md px-2 py-2 text-sm font-medium text-gray-900 ring-1 ring-inset ring-gray-200"
-                                                            >
-                                  <svg
-                                      className="h-1.5 w-1.5 fill-red-500"
-                                      viewBox="0 0 6 6"
-                                      aria-hidden="true"
-                                  >
-                                    <circle cx="3" cy="3" r="3"/>
-                                  </svg>
-                                  3
-                                </span>
-                                                            <span
-                                                                className="inline-flex items-center gap-x-1.5 rounded-md px-2 py-2 text-sm font-medium text-gray-900 ring-1 ring-inset ring-gray-200"
-                                                            >
-                                  <svg
-                                      className="h-1.5 w-1.5 fill-green-500"
-                                      viewBox="0 0 6 6"
-                                      aria-hidden="true"
-                                  >
-                                    <circle cx="3" cy="3" r="3"/>
-                                  </svg>
-                                  5
-                                </span>
-                                                        </div>
-                                                        <div className="flex">
-                                                            <div>
-                                                                <label htmlFor="sem2" className="sr-only"
-                                                                >Search candidates</label
-                                                                >
-                                                                <div className="flex rounded-md shadow-sm">
-                                                                    <div
-                                                                        className="relative flex flex-grow items-stretch focus-within:z-10"
-                                                                    >
-                                                                        <input
-                                                                            type="email"
-                                                                            name="email"
-                                                                            id="sem2"
-                                                                            className="block w-14 rounded-none rounded-l-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-blue-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6"
-                                                                            placeholder="4"
-                                                                            value="4"
-                                                                        />
-                                                                    </div>
-                                                                    <button
-                                                                        type="button"
-                                                                        className="relative -ml-px inline-flex items-center gap-x-1.5 rounded-r-md px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-blue-300 hover:bg-gray-50"
-                                                                    >
-                                                                        <svg
-                                                                            className="-ml-0.5 h-5 w-5 text-blue-400"
-                                                                            viewBox="0 0 20 20"
-                                                                            fill="currentColor"
-                                                                            aria-hidden="true"
-                                                                        >
-                                                                            <path
-                                                                                fill-rule="evenodd"
-                                                                                d="M2 3.75A.75.75 0 012.75 3h11.5a.75.75 0 010 1.5H2.75A.75.75 0 012 3.75zM2 7.5a.75.75 0 01.75-.75h6.365a.75.75 0 010 1.5H2.75A.75.75 0 012 7.5zM14 7a.75.75 0 01.55.24l3.25 3.5a.75.75 0 11-1.1 1.02l-1.95-2.1v6.59a.75.75 0 01-1.5 0V9.66l-1.95 2.1a.75.75 0 11-1.1-1.02l3.25-3.5A.75.75 0 0114 7zM2 11.25a.75.75 0 01.75-.75H7A.75.75 0 017 12H2.75a.75.75 0 01-.75-.75z"
-                                                                                clip-rule="evenodd"
-                                                                            />
-                                                                        </svg>
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                            <span
-                                                                className="ml-1 inline-flex items-center gap-x-1.5 rounded-md px-2 py-2 text-sm font-bold text-gray-900 ring-1 ring-inset ring-gray-300"
-                                                            >
-                                  <svg
-                                      className="h-1.5 w-1.5 fill-green-500"
-                                      viewBox="0 0 6 6"
-                                      aria-hidden="true"
-                                  >
-                                    <circle cx="3" cy="3" r="3"/>
-                                  </svg>
-                                  5
-                                </span>
-                                                        </div>
-                                                    </dd>
-                                                </div>
+                                                <SemesterRow />
                                                 <div className="px-4 py-6 sm:gap-4 sm:px-0">
                                                     <button
                                                         type="button"
@@ -248,12 +150,12 @@ function App() {
                                                             xmlns="http://www.w3.org/2000/svg"
                                                             fill="none"
                                                             viewBox="0 0 24 24"
-                                                            stroke-width="1.5"
+                                                            strokeWidth="1.5"
                                                             stroke="currentColor"
                                                         >
                                                             <path
-                                                                stroke-linecap="round"
-                                                                stroke-linejoin="round"
+                                                                strokeLinecap="round"
+                                                                strokeLinejoin="round"
                                                                 d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z"
                                                             />
                                                         </svg>
