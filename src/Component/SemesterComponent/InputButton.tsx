@@ -14,7 +14,7 @@ export default function InputButton({ onNewGradeAdded }: { onNewGradeAdded: (g :
         const gradeToAdd = parseFloat(grade)
         if (!isNaN(gradeToAdd) && gradeToAdd >= 1 && gradeToAdd <=6) {
             onNewGradeAdded(gradeToAdd)
-
+            setGrades("")
         }
     }
 
