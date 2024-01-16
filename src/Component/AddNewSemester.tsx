@@ -2,7 +2,7 @@ import SemesterRow from "./SemesterComponent/SemesterRow.tsx";
 import {useState} from "react";
 
 export function AddNewSemester() {
-    const [semesters, setSemesters] = useState([]);
+    const [semesters, setSemesters] = useState<number[]>([]);
 
     let semesterNumber = 0;
     if (semesterNumber <= 8) {
@@ -18,6 +18,7 @@ export function AddNewSemester() {
         return (
             <>
                 <div className="px-4 py-6 sm:gap-4 sm:px-0">
+                    {semesters}
                     <button
                         type="button"
                         onClick={addSemester}
@@ -43,7 +44,6 @@ export function AddNewSemester() {
                         >
                     </button>
                 </div>
-                {semesters}
             </>
         )
 
