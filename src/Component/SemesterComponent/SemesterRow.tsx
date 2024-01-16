@@ -2,13 +2,14 @@ import InputButton from "./InputButton.tsx";
 import GradeElement from "./GradeComponent/GradeElement.tsx";
 import SemesterAverage from "./SemesterAverage.tsx";
 import {useState} from "react";
+import SemesterIncrementation from "./SemesterIncrementation.tsx";
 
-export default function SemesterRow() {
+export default function SemesterRow({onNewAverageAdded}: {onNewAverageAdded :(g : number) => void}) {
     const [allGrades, setGrades] = useState<number[]>([]);
 
     const addGradeToSemester = (g: number) => setGrades((grades) => [...grades, g]);
 
-    const gradeWithColor = allGrades.map((grade, index) => (
+    const gradeWithColor = allGrades.map((grade, index ) => (
         <GradeElement key={index} grade={grade}/>
     ));
 
@@ -20,13 +21,19 @@ export default function SemesterRow() {
     sum = sum / allGrades.length
     sum = Math.round(sum * 2) / 2;
 
+    const addAverage = () => {
+        const averageToAdd  = parseFloat(sum)
+        if (!isNaN(averageToAdd) && averageToAdd >= 1 && averageToAdd <=6) {
+            onNewAverageAdded(averageToAdd)
+        }
+    }
+
     return (
-        <>
             <div
                 className="px-4 py-6 sm:grid sm:grid-cols-5 sm:gap-4 sm:px-0"
             >
                 <dt className="text-sm font-medium text-gray-900 py-2">
-                    Semester 1
+                    <SemesterIncrementation />
                 </dt>
                 <dd
                     className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-4 sm:mt-0 flex justify-between gap-x-1.5"
@@ -42,7 +49,6 @@ export default function SemesterRow() {
                     </div>
                 </dd>
             </div>
-        </>
     )
 }
 
