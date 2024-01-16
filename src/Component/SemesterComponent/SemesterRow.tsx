@@ -1,32 +1,36 @@
 import InputButton from "./InputButton.tsx";
 import GradeElement from "./GradeComponent/GradeElement.tsx";
 import SemesterAverage from "./SemesterAverage.tsx";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import SemesterIncrementation from "./SemesterIncrementation.tsx";
 
 export default function SemesterRow({onNewAverageAdded}: {onNewAverageAdded :(g : number) => void}) {
+    //add grade to the semester
+
     const [allGrades, setGrades] = useState<number[]>([]);
 
     const addGradeToSemester = (g: number) => setGrades((grades) => [...grades, g]);
 
-    const gradeWithColor = allGrades.map((grade, index ) => (
-        <GradeElement key={index} grade={grade}/>
-    ));
+    const calculateAverage = (gradeArray: number[]): number | null => {
+        if (gradeArray.length > 0) {
 
-    //calculate average of semester
-    let sum = 0;
-    for (let i = 0; i < allGrades.length; i++) {
-        sum += allGrades[i];
-    }
-    sum = sum / allGrades.length
-    sum = Math.round(sum * 2) / 2;
-
-    const addAverage = () => {
-        const averageToAdd  = parseFloat(sum)
-        if (!isNaN(averageToAdd) && averageToAdd >= 1 && averageToAdd <=6) {
-            onNewAverageAdded(averageToAdd)
+            // Calculate average of semester
+            let sum = 0;
+            for (let i = 0; i < gradeArray.length; i++) {
+                sum += gradeArray[i];
+            }
+            const average = sum / gradeArray.length;
+            return Math.round(average * 2) / 2;
+        } else {
+            return null;
         }
-    }
+    };
+
+
+    useEffect(() => {
+        onNewAverageAdded(calculateAverage(allGrades))
+    }, [allGrades])
+
 
     return (
             <div
@@ -41,14 +45,15 @@ export default function SemesterRow({onNewAverageAdded}: {onNewAverageAdded :(g 
                     <div
                         className="flex flex-row flex-nowrap overflow-y-scroll gap-x-1.5"
                     >
-                        {gradeWithColor}
+                        {allGrades.map((grade, index ) => (
+                            <GradeElement key={index} grade={grade}/>
+                        ))}
                     </div>
                     <div className="flex">
                             <InputButton onNewGradeAdded={addGradeToSemester}/>
-                            <SemesterAverage average={sum} />
+                            <SemesterAverage average={calculateAverage(allGrades)} />
                     </div>
                 </dd>
             </div>
     )
 }
-

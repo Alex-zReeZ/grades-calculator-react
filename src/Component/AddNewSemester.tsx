@@ -1,24 +1,10 @@
-import SemesterRow from "./SemesterComponent/SemesterRow.tsx";
-import {useState} from "react";
 
-export function AddNewSemester() {
-    const [semesters, setSemesters] = useState<number[]>([]);
-
-    let semesterNumber = 0;
-    if (semesterNumber <= 8) {
-        semesterNumber++
-    }
-
-    const addSemester = () => {
-        if (semesters.length < 8) {
-            setSemesters([...semesters, <SemesterRow key={semesters.length}/>]);
-        }
-    }
+export function AddNewSemester({ addSemester }: { addSemester: () => void }) {
 
         return (
             <>
                 <div className="px-4 py-6 sm:gap-4 sm:px-0">
-                    {semesters}
+
                     <button
                         type="button"
                         onClick={addSemester}
