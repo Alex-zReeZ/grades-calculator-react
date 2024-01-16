@@ -1,5 +1,5 @@
-export default function semesterIncrementation() {
-    let semesterNumber = 1;
+export default function SemesterIncrementation() {
+    let semesterNumber = 0;
     if (semesterNumber <= 8) {
         semesterNumber++
     }/* else {
@@ -9,7 +9,7 @@ export default function semesterIncrementation() {
     return (
         <>
             <dt className="text-sm font-medium text-gray-900 py-2">
-                Semestre {semesterNumber}
+                Semester {semesterNumber}
             </dt>
         </>
     )

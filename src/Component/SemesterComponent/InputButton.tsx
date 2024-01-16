@@ -1,7 +1,5 @@
 import React, {useState} from "react";
 
-
-
 export default function InputButton({ onNewGradeAdded }: { onNewGradeAdded: (g : number) => void }) {
 
     const [grade, setGrades] = useState("")
@@ -18,7 +16,6 @@ export default function InputButton({ onNewGradeAdded }: { onNewGradeAdded: (g :
         }
     }
 
-
     return (
         <>
             <div className="flex">
@@ -33,6 +30,7 @@ export default function InputButton({ onNewGradeAdded }: { onNewGradeAdded: (g :
                             <input
                                 type="number"
                                 name="number"
+                                max={6} min={1} step={0.5}
                                 value={grade}
                                 onChange={handleChange}
                                 id="sem1"
