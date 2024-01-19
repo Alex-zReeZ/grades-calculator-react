@@ -1,5 +1,4 @@
 import './App.css'
-import {AddNewSemester} from "./Component/AddNewSemester.tsx";
 import {AllSemester} from "./Component/AllSemester.tsx";
 
 function App() {

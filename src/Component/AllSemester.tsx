@@ -13,7 +13,7 @@ export function AllSemester() {
         }
     }
 
-    const newAverage = (indexToUpdate: number, averageToUpdate: number) => {
+    const newAverage = (indexToUpdate: number, averageToUpdate: number | null) => {
         setSemesters(semesters.map((average, index) => {
             if (indexToUpdate === index) {
                 return averageToUpdate
@@ -44,7 +44,7 @@ export function AllSemester() {
                               className="inline-flex items-center gap-x-1.5 rounded-md px-3 py-1 text-lg font-bold text-gray-900 ring-1 ring-inset ring-gray-200"
                           >
                             <svg
-                                className="h-1.5 w-1.5 fill-green-500"
+                                className={`h-1.5 w-1.5 fill-green-500`}
                                 viewBox="0 0 6 6"
                                 aria-hidden="true"
                             >
@@ -62,7 +62,6 @@ export function AllSemester() {
                     </div>
                 </div>
             </section>
-
         </>
     )
 }

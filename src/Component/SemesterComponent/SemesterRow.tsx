@@ -4,9 +4,8 @@ import SemesterAverage from "./SemesterAverage.tsx";
 import {useEffect, useState} from "react";
 import SemesterIncrementation from "./SemesterIncrementation.tsx";
 
-export default function SemesterRow({onNewAverageAdded}: {onNewAverageAdded :(g : number) => void}) {
+export default function SemesterRow({onNewAverageAdded}: {onNewAverageAdded :(g: number | null) => void}) {
     //add grade to the semester
-
     const [allGrades, setGrades] = useState<number[]>([]);
 
     const addGradeToSemester = (g: number) => setGrades((grades) => [...grades, g]);
@@ -29,7 +28,7 @@ export default function SemesterRow({onNewAverageAdded}: {onNewAverageAdded :(g 
 
     useEffect(() => {
         onNewAverageAdded(calculateAverage(allGrades))
-    }, [allGrades])
+    }, [allGrades, onNewAverageAdded])
 
 
     return (
@@ -51,7 +50,7 @@ export default function SemesterRow({onNewAverageAdded}: {onNewAverageAdded :(g 
                     </div>
                     <div className="flex">
                             <InputButton onNewGradeAdded={addGradeToSemester}/>
-                            <SemesterAverage average={calculateAverage(allGrades)} />
+                            <SemesterAverage average={calculateAverage(allGrades)}/>
                     </div>
                 </dd>
             </div>
