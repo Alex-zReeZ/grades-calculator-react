@@ -1,3 +1,4 @@
+
 export default function SemesterIncrementation() {
     let semesterNumber = 0;
     if (semesterNumber <= 8) {

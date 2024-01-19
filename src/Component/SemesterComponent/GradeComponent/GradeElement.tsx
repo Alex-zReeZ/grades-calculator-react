@@ -1,6 +1,6 @@
 import SvgColor from '../../SvgColor.tsx';
 
-export default function GradeElement({ grade }: { grade: number }) {
+export default function GradeElement({ grade }: { grade: number | null }) {
 
   return (
       <>
