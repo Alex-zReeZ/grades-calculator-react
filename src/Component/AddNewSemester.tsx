@@ -1,6 +1,7 @@
 
 export function AddNewSemester({ addSemester }: { addSemester: () => void }) {
 
+
         return (
             <>
                 <div className="px-4 py-6 sm:gap-4 sm:px-0">

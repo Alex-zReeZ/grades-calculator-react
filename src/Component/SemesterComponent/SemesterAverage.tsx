@@ -11,6 +11,6 @@ export default function SemesterAverage({ average }: { average: number | null}) 
       </span>
         );
     } else if (average === null){
-        return null
+        return
     }
 }

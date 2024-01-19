@@ -14,7 +14,7 @@ export const calculateAverage = (gradeArray: Array<number | null>): number | nul
             const average = sum / count;
             return Math.round(average * 2) / 2;
         } else {
-            return null;
+            return null
         }
     } else {
         return null;
