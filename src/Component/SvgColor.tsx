@@ -1,7 +1,7 @@
 export default function SvgColor({ grade }: { grade: number | null}) {
     let colorClass;
 
-    if (grade === null) {
+    if (grade === null || grade === 0) {
         return ""
     } else {
 
@@ -14,6 +14,7 @@ export default function SvgColor({ grade }: { grade: number | null}) {
         }
 
         return (
+            <>
             <svg
                 className={`h-1.5 w-1.5 ${colorClass}`}
                 viewBox="0 0 6 6"
@@ -21,6 +22,9 @@ export default function SvgColor({ grade }: { grade: number | null}) {
             >
                 <circle cx="3" cy="3" r="3"/>
             </svg>
+                {grade}
+            </>
+
         );
     }
 }

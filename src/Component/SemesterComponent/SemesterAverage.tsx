@@ -8,7 +8,6 @@ export default function SemesterAverage({ average }: { average: number | null}) 
                 ring-1 ring-inset ring-gray-300"
             >
         <SvgColor grade={average}/>
-                {average}
       </span>
         );
     } else if (average === null){

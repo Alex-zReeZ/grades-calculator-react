@@ -1,8 +1,9 @@
 import {useState} from "react";
 import SemesterRow from "./SemesterComponent/SemesterRow.tsx";
-import { AddNewSemester } from "./AddNewSemester.tsx";
+import {AddNewSemester} from "./AddNewSemester.tsx";
 import {calculateAverage} from "./CalculateAverage.tsx";
 import SvgColor from "./SvgColor.tsx";
+
 
 export function AllSemester() {
 
@@ -10,8 +11,11 @@ export function AllSemester() {
     const average = calculateAverage(semesters)
 
     const addSemester = () => {
+
+
         if (semesters.length < 8) {
             setSemesters([...semesters, null]);
+
         }
     }
 
@@ -27,7 +31,7 @@ export function AllSemester() {
 
     const renderSemesterRows = () => {
         return semesters.map((_average, index) => (
-            <SemesterRow onNewAverageAdded={(g) => newAverage(index, g)} key={index} />
+            <SemesterRow onNewAverageAdded={(g) => newAverage(index, g)} key={index}/>
         ));
     }
 
@@ -48,17 +52,15 @@ export function AllSemester() {
                             </div>
                             <span
                                 className="inline-flex items-center gap-x-1.5 rounded-md px-3 py-1 text-lg font-bold
-                                     text-gray-900 ring-1 ring-inset ring-gray-200"
+                                text-gray-900 ring-1 ring-inset ring-gray-200"
                             >
-                            <SvgColor grade={average}/>
-                                {average}
+                                <SvgColor grade={average}/>
                             </span>
                         </div>
 
                         <div className="mt-6 border-t border-gray-100">
                             {renderSemesterRows()}
                             <AddNewSemester addSemester={addSemester}/>
-                            {average}
                         </div>
                     </div>
                 </div>
