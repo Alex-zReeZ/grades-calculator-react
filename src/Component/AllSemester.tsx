@@ -1,6 +1,6 @@
 import {useState} from "react";
 import SemesterRow from "./SemesterComponent/SemesterRow.tsx";
-import {AddNewSemester} from "./AddNewSemester.tsx";
+import {AddNewSemester} from "./SemesterComponent/AddNewSemester.tsx";
 import {calculateAverage} from "./CalculateAverage.tsx";
 import SvgColor from "./SvgColor.tsx";
 
