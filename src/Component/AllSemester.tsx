@@ -2,8 +2,8 @@ import {useState} from "react";
 import SemesterRow from "./SemesterComponent/SemesterRow.tsx";
 import {AddNewSemester} from "./SemesterComponent/AddNewSemester.tsx";
 import {calculateAverage} from "./CalculateAverage.tsx";
-import SvgColor from "./SvgColor.tsx";
 import {useAverageStore} from "./GradeStore.tsx";
+import GlobalAverage from "./GlobalAverage.tsx";
 
 
 export function AllSemester() {
@@ -53,12 +53,7 @@ export function AllSemester() {
                                     Mathématiques
                                 </h2>
                             </div>
-                            <span
-                                className="inline-flex items-center gap-x-1.5 rounded-md px-3 py-1 text-lg font-bold
-                                text-gray-900 ring-1 ring-inset ring-gray-200"
-                            >
-                                <SvgColor grade={average}/>
-                            </span>
+                            <GlobalAverage grade={average}/>
                         </div>
 
 
