@@ -3,10 +3,14 @@ import SemesterRow from "./SemesterComponent/SemesterRow.tsx";
 import {AddNewSemester} from "./SemesterComponent/AddNewSemester.tsx";
 import {calculateAverage} from "./CalculateAverage.tsx";
 import SvgColor from "./SvgColor.tsx";
+import {useAverageStore} from "./GradeStore.tsx";
+
 
 export function AllSemester() {
     const [semesters, setSemesters] = useState<Array<number | null>>([]);
     const average = calculateAverage(semesters)
+
+    useAverageStore.getState().updateAverage(average, 'math');
 
     const addSemester = () => {
         if (semesters.length < 8) {

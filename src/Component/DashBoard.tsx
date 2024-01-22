@@ -1,4 +1,9 @@
+import {useAverageStore} from "./GradeStore.tsx";
+
+
 export default function DashBoard() {
+
+    const { math, eng, soci, info, modepsic, cie } = useAverageStore();
 
 
     return (
@@ -21,7 +26,7 @@ export default function DashBoard() {
                             <dd
                                 className="w-full flex-none text-3xl font-bold leading-10 tracking-tight text-gray-900"
                             >
-                                5.5
+                                {6}
                             </dd>
                         </div>
                         <div
@@ -36,7 +41,7 @@ export default function DashBoard() {
                             <dd
                                 className="w-full flex-none text-3xl font-medium leading-10 tracking-tight text-gray-900"
                             >
-                                6
+                                {math}
                             </dd>
                         </div>
                         <div
@@ -49,7 +54,7 @@ export default function DashBoard() {
                             <dd
                                 className="w-full flex-none text-3xl font-medium leading-10 tracking-tight text-gray-900"
                             >
-                                4.5
+                                {soci}
                             </dd>
                         </div>
                         <div
@@ -64,7 +69,7 @@ export default function DashBoard() {
                             <dd
                                 className="w-full flex-none text-3xl font-medium leading-10 tracking-tight text-gray-900"
                             >
-                                4.5
+                                {eng}
                             </dd>
                         </div>
                         <div
@@ -79,7 +84,7 @@ export default function DashBoard() {
                             <dd
                                 className="w-full flex-none text-3xl font-medium leading-10 tracking-tight text-gray-900"
                             >
-                                4.5
+                                {info}
                             </dd>
                         </div>
                         <div
@@ -94,7 +99,7 @@ export default function DashBoard() {
                             <dd
                                 className="w-full flex-none text-3xl font-medium leading-10 tracking-tight text-gray-900"
                             >
-                                4.5
+                                {modepsic}
                             </dd>
                         </div>
                         <div
@@ -107,7 +112,7 @@ export default function DashBoard() {
                             <dd
                                 className="w-full flex-none text-3xl font-medium leading-10 tracking-tight text-gray-900"
                             >
-                                4.5
+                                {cie}
                             </dd>
                         </div>
                     </dl>

@@ -1,6 +1,4 @@
 import React, {useState} from "react";
-import {Simulate} from "react-dom/test-utils";
-import error = Simulate.error;
 
 export default function InputButton({ onNewGradeAdded }: { onNewGradeAdded: (g : number) => void }) {
 
