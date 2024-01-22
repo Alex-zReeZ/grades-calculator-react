@@ -2,13 +2,11 @@ import InputButton from "./InputButton.tsx";
 import GradeElement from "./GradeComponent/GradeElement.tsx";
 import SemesterAverage from "./SemesterAverage.tsx";
 import { useEffect, useState } from "react";
-import {calculateAverage} from "../CalculateAverage.tsx";
-import {semesterNumber} from  "../AllSemester.tsx"
+import { calculateAverage } from "../CalculateAverage.tsx";
 
 
-export default function SemesterRow({ onNewAverageAdded }: { onNewAverageAdded: (g: number | null) => void}) {
+export default function SemesterRow({ onNewAverageAdded, semesterNumber }: { onNewAverageAdded: (g: number | null) => void, semesterNumber: number}) {
     const [allGrades, setGrades] = useState<number[]>([]);
-
 
     const addGradeToSemester = (g: number) => setGrades((grades) => [...grades, g]);
 

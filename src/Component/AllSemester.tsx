@@ -5,20 +5,15 @@ import {calculateAverage} from "./CalculateAverage.tsx";
 import SvgColor from "./SvgColor.tsx";
 
 
-export let semesterNumber = 0;
-
 export function AllSemester() {
-
     const [semesters, setSemesters] = useState<Array<number | null>>([]);
     const average = calculateAverage(semesters)
 
     const addSemester = () => {
         if (semesters.length < 8) {
             setSemesters([...semesters, null]);
-            semesterNumber++
         }
     }
-
 
     const newAverage = (indexToUpdate: number, averageToUpdate: number | null) => {
         setSemesters(semesters.map((average, index) => {
@@ -32,7 +27,11 @@ export function AllSemester() {
 
     const renderSemesterRows = () => {
         return semesters.map((_average, index) => (
-            <SemesterRow onNewAverageAdded={(g) => newAverage(index, g)} key={index}/>
+            <SemesterRow
+                onNewAverageAdded={(g) => newAverage(index, g)}
+                key={index}
+                semesterNumber={index+1}
+            />
         ));
     }
 
@@ -58,6 +57,7 @@ export function AllSemester() {
                                 <SvgColor grade={average}/>
                             </span>
                         </div>
+
 
                         <div className="mt-6 border-t border-gray-100">
                             {renderSemesterRows()}

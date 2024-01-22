@@ -39,7 +39,6 @@ export default function InputButton({ onNewGradeAdded }: { onNewGradeAdded: (g :
                             />
                         </div>
 
-
                         <button
                             type="button"
                             onClick={addGrade}
