@@ -7,10 +7,12 @@ export default function DashBoard() {
                 <h2 className="sr-only" id="section-2-title"/>
                 <div className="overflow-hidden rounded-lg bg-white shadow">
                     <dl
-                        className="mx-auto grid grid-cols-1 gap-px bg-gray-900/5 sm:grid-cols-2 lg:grid-cols-2"
+                        className="
+                        mx-auto grid grid-cols-1 gap-px bg-gray-900/5 sm:grid-cols-2 lg:grid-cols-2"
                     >
                         <div
-                            className="col-span-2 flex flex-wrap items-baseline justify-between gap-x-2 gap-y-2 bg-white px-6 py-6"
+                            className="col-span-2 flex flex-wrap items-baseline justify-between gap-x-2
+                             gap-y-2 bg-white px-6 py-6"
                         >
                             <dt className="text-sm font-medium leading-6 text-gray-500">
                                 Moyenne générale
