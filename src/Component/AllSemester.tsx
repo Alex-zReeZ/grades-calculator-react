@@ -4,7 +4,6 @@ import {AddNewSemester} from "./SemesterComponent/AddNewSemester.tsx";
 import {calculateAverage} from "./CalculateAverage.tsx";
 import SvgColor from "./SvgColor.tsx";
 
-
 export function AllSemester() {
     const [semesters, setSemesters] = useState<Array<number | null>>([]);
     const average = calculateAverage(semesters)

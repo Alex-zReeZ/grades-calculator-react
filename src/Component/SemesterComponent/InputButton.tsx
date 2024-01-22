@@ -11,11 +11,12 @@ export default function InputButton({ onNewGradeAdded }: { onNewGradeAdded: (g :
     const addGrade = () => {
         const gradeToAdd = parseFloat(grade);
 
-        if (!isNaN(gradeToAdd) && gradeToAdd % 1 === 0 && gradeToAdd >= 1 && gradeToAdd <= 6) {
+        if (!isNaN(gradeToAdd) && (gradeToAdd % 1 === 0 || gradeToAdd % 1 === 0.5) && gradeToAdd >= 1 && gradeToAdd <= 6) {
             onNewGradeAdded(gradeToAdd);
             setGrades("");
         }
     };
+
 
     return (
         <>
