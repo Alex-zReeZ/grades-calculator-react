@@ -1,4 +1,6 @@
 import React, {useState} from "react";
+import {Simulate} from "react-dom/test-utils";
+import error = Simulate.error;
 
 export default function InputButton({ onNewGradeAdded }: { onNewGradeAdded: (g : number) => void }) {
 
@@ -14,6 +16,9 @@ export default function InputButton({ onNewGradeAdded }: { onNewGradeAdded: (g :
         if (!isNaN(gradeToAdd) && (gradeToAdd % 1 === 0 || gradeToAdd % 1 === 0.5) && gradeToAdd >= 1 && gradeToAdd <= 6) {
             onNewGradeAdded(gradeToAdd);
             setGrades("");
+        } else {
+            alert("Error : please verify your input")
+            setGrades("")
         }
     };
 
