@@ -1,16 +1,19 @@
-import { useState } from "react";
+import {useEffect, useState} from "react";
 import SemesterRow from "./SemesterComponent/SemesterRow.tsx";
 import { AddNewSemester } from "./SemesterComponent/AddNewSemester.tsx";
 import { calculateAverage } from "./CalculateAverage.tsx";
-import { useAverageStore } from "./GradeStore.tsx";
 import GlobalAverage from "./GlobalAverage.tsx";
+import {useAverageStore} from "./GradeStore.tsx";
 
 
-export function AllSemester() {
+export function AllSemester({subject}:{subject: string}) {
     const [semesters, setSemesters] = useState<Array<number | null>>([]);
     const average = calculateAverage(semesters)
+    const updateAverage = useAverageStore(store => store.updateAverage)
 
-    useAverageStore.getState().updateAverage(average, 'math');
+    useEffect(() => {
+        updateAverage(average, "math")
+    })
 
     const addSemester = () => {
         if (semesters.length < 4) {
@@ -50,7 +53,7 @@ export function AllSemester() {
                                     className="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl
                                      sm:tracking-tight"
                                 >
-                                    Mathématiques
+                                    {subject}
                                 </h2>
                             </div>
                             <GlobalAverage grade={average}/>

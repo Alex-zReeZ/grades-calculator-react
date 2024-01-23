@@ -14,7 +14,7 @@ interface allAverageStore{
 
 export const useAverageStore = create<allAverageStore>((set)  => ({
     overAll: "-",
-    math: "-",
+    math: 5,
     eng: "-",
     soci: "-",
     info: "-",

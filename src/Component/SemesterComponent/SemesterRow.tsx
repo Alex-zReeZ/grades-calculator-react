@@ -12,7 +12,7 @@ export default function SemesterRow({ onNewAverageAdded, semesterNumber }: { onN
 
     useEffect(() => {
         onNewAverageAdded(calculateAverage(allGrades));
-    }, [allGrades]);
+    });
 
     const renderGradeElements = () => {
         return allGrades.map((grade, index) => (
