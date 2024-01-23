@@ -1,21 +1,9 @@
 import './App.css'
-import {AllSemester} from "./Component/AllSemester.tsx";
 import DashBoard from "./Component/DashBoard.tsx";
 import PageHeader from "./Component/PageHeader.tsx";
-/*import {createBrowserRouter} from "react-router-dom";
-import NavBar from "./Component/NavBar.tsx";*/
+import {Outlet} from "react-router";
 
 function App() {
-/*    const router = createBrowserRouter([
-        {
-            path:"/",
-            element: <div>
-                <NavBar/>
-                <subject={"Mathématiques"}/>
-            </div>
-        },
-    ])*/
-
     return (
         <>
             <PageHeader/>
@@ -24,7 +12,8 @@ function App() {
                     <h1 className="sr-only">Averages</h1>
                     <div className="grid grid-cols-1 items-start gap-4 lg:grid-cols-3 lg:gap-8">
                         <div className="grid grid-cols-1 gap-4 lg:col-span-2">
-                            <AllSemester />
+                            <Outlet />
+
                         </div>
 
                         <DashBoard />

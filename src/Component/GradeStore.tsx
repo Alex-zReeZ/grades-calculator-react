@@ -1,23 +1,23 @@
 import { create } from 'zustand'
 
-interface allAverageStore{
-    overAll: null  | number | string,
-    math:null | number | string,
-    eng:null | number | string,
-    soci:null | number | string,
-    info:null | number | string,
-    modepsic:null | number | string,
-    cie:null | number | string,
+export interface allAverageStore{
+    Tout: null  | number,
+    Mathematique:null | number,
+    Anglais:null | number,
+    SocieteEtLangues:null | number,
+    Informatique:null | number,
+    ModuleEpsic:null | number,
+    Cie:null | number,
 
     updateAverage(mathAverage: number | null, math: string): void;
 }
 
 export const useAverageStore = create<allAverageStore>((set)  => ({
-    overAll: "-",
-    math: 5,
-    eng: "-",
-    soci: "-",
-    info: "-",
-    modepsic: "-",
-    cie: "-",
+    Tout: null,
+    Mathematique: null,
+    Anglais: null,
+    SocieteEtLangues: null,
+    Informatique: null,
+    ModuleEpsic: null,
+    Cie: null,
     updateAverage: (newAverage : number, key: keyof allAverageStore) => set(() => ({[key]:newAverage}))  }))

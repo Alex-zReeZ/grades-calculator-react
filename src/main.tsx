@@ -12,9 +12,9 @@ const router = createBrowserRouter([
         Component: App,
         children: [
             {
-                path:"/",
+                path:"/Mathematique",
                 element: <div>
-                    <AllSemester subject={"Mathematiques"}/>
+                    <AllSemester subject={"Mathematique"}/>
                 </div>
             },
             {
@@ -31,15 +31,15 @@ const router = createBrowserRouter([
 
             },
             {
-                path:"/epsic",
+                path:"/ModuleEpsic",
                 element: <div>
-                    <AllSemester subject={"ModulesEPSIC"}/>
+                    <AllSemester subject={"ModuleEpsic"}/>
                 </div>
             },
             {
-                path:"/cie",
+                path:"/Cie",
                 element: <div>
-                    <AllSemester subject={"ModulesCIE"}/>
+                    <AllSemester subject={"Cie"}/>
                 </div>
             },
         ]

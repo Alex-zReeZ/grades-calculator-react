@@ -1,3 +1,4 @@
+import {Link} from "react-router-dom";
 
 export default function NavBar() {
     return (
@@ -5,40 +6,34 @@ export default function NavBar() {
             <div className="grid grid-cols-3 items-center gap-8">
                 <div className="col-span-2">
                     <nav className="flex space-x-4">
-                        <a
-                            href="#"
-                            className="text-white font-bold rounded-md bg-white bg-opacity-0 px-3 py-2 text-sm
-                            hover:bg-opacity-10"
+                        <Link
+                            to="/Mathematique"
+                            className="text-sky-100 rounded-md bg-white bg-opacity-0 px-3 py-2 text-sm font-medium hover:bg-opacity-10"
                         >
-                            Math</a
+                            Math</Link>
+                        <Link
+                            to="/Societe"
+                            className="text-sky-100 rounded-md bg-white bg-opacity-0 px-3 py-2 text-sm font-medium hover:bg-opacity-10"
                         >
-                        <a
-                            href="#"
-                            className="text-sky-100 rounded-md bg-white bg-opacity-0 px-3 py-2 text-sm font-medium
-                            hover:bg-opacity-10"
+                            Société</Link
                         >
-                            Société</a
+                        <Link
+                            to="/Anglais"
+                            className="text-sky-100 rounded-md bg-white bg-opacity-0 px-3 py-2 text-sm font-medium hover:bg-opacity-10"
                         >
-                        <a
-                            href="#"
-                            className="text-sky-100 rounded-md bg-white bg-opacity-0 px-3 py-2 text-sm font-medium
-                            hover:bg-opacity-10"
+                            Anglais</Link
                         >
-                            Anglais</a
+                        <Link
+                            to="/ModuleEpsic"
+                            className="text-sky-100 rounded-md bg-white bg-opacity-0 px-3 py-2 text-sm font-medium hover:bg-opacity-10"
                         >
-                        <a
-                            href="#"
-                            className="text-sky-100 rounded-md bg-white bg-opacity-0 px-3 py-2 text-sm font-medium
-                            hover:bg-opacity-10"
+                            Modules EPSIC</Link
                         >
-                            Modules EPSIC</a
+                        <Link
+                            to="/Cie"
+                            className="text-sky-100 rounded-md bg-white bg-opacity-0 px-3 py-2 text-sm font-medium hover:bg-opacity-10"
                         >
-                        <a
-                            href="#"
-                            className="text-sky-100 rounded-md bg-white bg-opacity-0 px-3 py-2 text-sm font-medium
-                            hover:bg-opacity-10"
-                        >
-                            CIE</a
+                            CIE</Link
                         >
                     </nav>
                 </div>
