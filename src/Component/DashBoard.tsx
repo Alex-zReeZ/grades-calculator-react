@@ -1,10 +1,9 @@
-import {useAverageStore} from "./GradeStore.tsx";
+import { useAverageStore } from "./GradeStore.tsx";
 
 
 export default function DashBoard() {
 
-    const { math, eng, soci, info, modepsic, cie } = useAverageStore();
-
+    const {math,eng,soci,info,modepsic,cie ,overAll } = useAverageStore();
 
     return (
         <div className="grid grid-cols-1 gap-4">
@@ -26,7 +25,7 @@ export default function DashBoard() {
                             <dd
                                 className="w-full flex-none text-3xl font-bold leading-10 tracking-tight text-gray-900"
                             >
-                                {6}
+                                {overAll}
                             </dd>
                         </div>
                         <div

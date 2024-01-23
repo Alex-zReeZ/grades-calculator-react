@@ -1,6 +1,7 @@
 import { create } from 'zustand'
 
 interface allAverageStore{
+    overAll: null  | number | string,
     math:null | number | string,
     eng:null | number | string,
     soci:null | number | string,
@@ -12,6 +13,7 @@ interface allAverageStore{
 }
 
 export const useAverageStore = create<allAverageStore>((set)  => ({
+    overAll: "-",
     math: "-",
     eng: "-",
     soci: "-",

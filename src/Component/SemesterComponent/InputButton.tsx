@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 export default function InputButton({ onNewGradeAdded }: { onNewGradeAdded: (g : number) => void }) {
 
@@ -15,7 +15,9 @@ export default function InputButton({ onNewGradeAdded }: { onNewGradeAdded: (g :
             onNewGradeAdded(gradeToAdd);
             setGrades("");
         } else {
-            alert("Error : please verify your input")
+            alert("" +
+                "Error : please verify the grade you entered" +
+                "")
             setGrades("")
         }
     };

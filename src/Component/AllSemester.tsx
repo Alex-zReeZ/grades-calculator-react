@@ -1,8 +1,8 @@
-import {useState} from "react";
+import { useState } from "react";
 import SemesterRow from "./SemesterComponent/SemesterRow.tsx";
-import {AddNewSemester} from "./SemesterComponent/AddNewSemester.tsx";
-import {calculateAverage} from "./CalculateAverage.tsx";
-import {useAverageStore} from "./GradeStore.tsx";
+import { AddNewSemester } from "./SemesterComponent/AddNewSemester.tsx";
+import { calculateAverage } from "./CalculateAverage.tsx";
+import { useAverageStore } from "./GradeStore.tsx";
 import GlobalAverage from "./GlobalAverage.tsx";
 
 
@@ -13,7 +13,7 @@ export function AllSemester() {
     useAverageStore.getState().updateAverage(average, 'math');
 
     const addSemester = () => {
-        if (semesters.length < 8) {
+        if (semesters.length < 4) {
             setSemesters([...semesters, null]);
         }
     }
@@ -33,7 +33,7 @@ export function AllSemester() {
             <SemesterRow
                 onNewAverageAdded={(g) => newAverage(index, g)}
                 key={index}
-                semesterNumber={index+1}
+                semesterNumber={index + 1}
             />
         ));
     }
@@ -59,7 +59,7 @@ export function AllSemester() {
 
                         <div className="mt-6 border-t border-gray-100">
                             {renderSemesterRows()}
-                            <AddNewSemester addSemester={addSemester}/>
+                            {semesters.length < 4 && <AddNewSemester addSemester={addSemester}/>}
                         </div>
                     </div>
                 </div>
