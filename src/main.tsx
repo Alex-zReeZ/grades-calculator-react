@@ -31,7 +31,7 @@ const router = createBrowserRouter([
 
             },
             {
-                path:"/ModuleEpsic",
+                path:"/moduleEpsic",
                 element: <div>
                     <AllSemester subject={"ModuleEpsic"}/>
                 </div>

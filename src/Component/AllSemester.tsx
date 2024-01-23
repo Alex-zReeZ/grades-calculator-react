@@ -3,7 +3,7 @@ import SemesterRow from "./SemesterComponent/SemesterRow.tsx";
 import { AddNewSemester } from "./SemesterComponent/AddNewSemester.tsx";
 import { calculateAverage } from "./CalculateAverage.tsx";
 import GlobalAverage from "./GlobalAverage.tsx";
-import {useAverageStore, allAverageStore} from "./GradeStore.tsx";
+import {useAverageStore, allAverageStore} from "./AverageStore.tsx";
 
 
 export function AllSemester({subject}:{subject: keyof allAverageStore}) {

@@ -1,4 +1,4 @@
-import { useAverageStore } from "./GradeStore.tsx";
+import { useAverageStore } from "./AverageStore.tsx";
 
 
 export default function DashBoard() {
