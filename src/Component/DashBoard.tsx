@@ -3,7 +3,7 @@ import { useAverageStore } from "./AverageStore.tsx";
 
 export default function DashBoard() {
 
-    const {Mathematique,Anglais,SocieteEtLangues ,Informatique,ModuleEpsic,Cie ,Tout } = useAverageStore();
+    const {Mathematique,Anglais,SocieteEtLangues ,Informatique,ModuleEpsic,Cie ,OverAllGrade } = useAverageStore();
 
     return (
         <div className="grid grid-cols-1 gap-4">
@@ -25,7 +25,7 @@ export default function DashBoard() {
                             <dd
                                 className="w-full flex-none text-3xl font-bold leading-10 tracking-tight text-gray-900"
                             >
-                                {Tout}
+                                {OverAllGrade}
                             </dd>
                         </div>
                         <div

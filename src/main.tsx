@@ -3,43 +3,43 @@ import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import {AllSemester} from "./Component/AllSemester.tsx";
-
+import Mathematique from "./Component/subject/Math.tsx";
+import Anglais from "./Component/subject/Anglais.tsx";
+import Societe from "./Component/subject/Societe.tsx";
+import ModuleEpsic from "./Component/subject/ModuleEpsic.tsx";
+import Cie from "./Component/subject/Cie.tsx";
 
 const router = createBrowserRouter([
     {
-        path:"/",
+        path: "/",
         Component: App,
         children: [
             {
-                path:"/Mathematique",
-                element: <div>
-                    <AllSemester subject={"Mathematique"}/>
-                </div>
+                path: "/Mathematique",
+                element: <Mathematique />,
             },
             {
-                path:"/societe",
-                element: <AllSemester subject={"SocieteEtLangues"}/>
-            }
-            ,
+                path: "/societe",
+                element: <Societe />,
+            },
             {
                 path:"/anglais",
                 element:
                     <div>
-                        <AllSemester subject={"Anglais"}/>
+                        <Anglais />
                     </div>
 
             },
             {
                 path:"/moduleEpsic",
                 element: <div>
-                    <AllSemester subject={"ModuleEpsic"}/>
+                    <ModuleEpsic/>
                 </div>
             },
             {
                 path:"/Cie",
                 element: <div>
-                    <AllSemester subject={"Cie"}/>
+                    <Cie />
                 </div>
             },
         ]
